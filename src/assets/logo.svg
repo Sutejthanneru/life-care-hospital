@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="40" fill="#0f766e" />
+  <path d="M90 45v110M45 90h110" stroke="#fff" stroke-width="30" stroke-linecap="round" />
+  <text x="100" y="178" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="40" fill="#fff" font-weight="700">LC</text>
+</svg>
