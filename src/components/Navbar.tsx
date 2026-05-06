@@ -33,7 +33,7 @@ const Navbar = () => {
         scrolled ? "shadow-sm border-slate-200/80" : "border-transparent shadow-none"
       )}
     >
-      <nav className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-1.6 md:px-6">
+      <nav className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-2.4 md:px-6">
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src={logo} alt="Life Care Hospital logo" className="h-16 w-auto object-contain" />
         </Link>
