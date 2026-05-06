@@ -29,13 +29,13 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-xl transition-all duration-300",
+        "sticky top-0 z-50 w-full border-b bg-white backdrop-blur-xl transition-all duration-300",
         scrolled ? "shadow-sm border-slate-200/80" : "border-transparent shadow-none"
       )}
     >
-      <nav className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-4 md:px-6">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={logo} alt="Life Care Hospital logo" className="h-12 w-auto" />
+      <nav className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-1.6 md:px-6">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img src={logo} alt="Life Care Hospital logo" className="h-16 w-auto object-contain" />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -82,14 +82,14 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="lg:hidden border-t border-slate-200/80 bg-white/95 shadow-sm">
-          <div className="container mx-auto px-4 py-4 md:px-6">
+          <div className="container mx-auto px-4 py-0 md:px-6">
             <div className="space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "block rounded-2xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] transition duration-200",
+                    "block rounded-2xl px-4 py-0 text-sm font-semibold uppercase tracking-[0.12em] transition duration-200",
                     location.pathname === link.href
                       ? "bg-secondary/10 text-secondary"
                       : "text-slate-700 hover:bg-slate-50"

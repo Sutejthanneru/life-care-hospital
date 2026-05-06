@@ -21,7 +21,6 @@ const Index = () => {
         <AboutSection />
         <ServicesSection />
         <DoctorsSection />
-        <EmergencySection />
         <FAQSection />
         <ContactSection />
         <ConsultationBanner />

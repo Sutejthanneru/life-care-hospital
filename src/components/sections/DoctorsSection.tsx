@@ -26,7 +26,7 @@ const doctors = [
     name: "Dr. Ahalya Prasanthi",
     qualification: "MBBS, MS(ObG), FMAS, DMAS",
     specialization: ["Reproductive Medicine Specialist"],
-    experience: "8+ Years",
+    experience: "1 Year",
     image: "/images/dr-ahalya-prasanthi.jpg",
   },
 ];

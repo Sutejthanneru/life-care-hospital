@@ -38,7 +38,7 @@ const doctors = [
     name: "Dr. Ahalya Prasanthi",
     qualification: "MBBS, MS(ObG), FMAS, DMAS",
     specialization: ["Reproductive Medicine Specialist"],
-    experience: "8+ Years",
+    experience: "1 year",
     image: "/images/dr-ahalya-prasanthi.jpg",
     bio: "Dr. Prasanthi supports couples through fertility evaluation, assisted reproduction, and personalized women's health planning.",
     expertise: ["IVF", "IUI", "Ovulation Support", "Fertility Counseling", "Reproductive Health"],

@@ -24,7 +24,7 @@ const HeroSection = () => {
             <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-200">
               Trusted healthcare in Kavali
             </span>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
               Life Care Hospital — premium care, modern facilities, and a human-centered experience.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-slate-200/90 sm:text-base">
