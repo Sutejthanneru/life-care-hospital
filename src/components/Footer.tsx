@@ -21,7 +21,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-secondary" />
-                lifecarehospital@gmail.com
+                lifecarehospitalkavali@gmail.com
               </div>
             </div>
           </div>

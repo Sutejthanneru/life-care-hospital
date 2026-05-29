@@ -45,10 +45,10 @@ const Navbar = () => {
         scrolled ? "shadow-sm border-slate-200/80" : "border-transparent shadow-none"
       )}
     >
-      <nav className="container mx-auto flex items-center justify-between gap-4 px-4 py-3 md:py-3 md:px-6">
+      <nav className="container mx-auto flex items-center justify-between gap-4 px-5 py-3 md:py-3 md:px-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0 flex-1 md:flex-none">
-          <img src={logo} alt="Life Care Hospital logo" className="h-14 md:h-16 w-auto object-contain" />
+        <Link to="/" className="flex items-center gap-0 shrink-0 flex-1 md:flex-none">
+          <img src={logo} alt="Life Care Hospital logo" className="h-20 md:h-20 w-30 object-contain" />
         </Link>
 
         {/* Desktop Navigation */}

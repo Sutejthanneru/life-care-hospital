@@ -7,11 +7,40 @@ import { toast } from "sonner";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", age: "", phone: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const hospitalEmail = "lifecarehospitalkavali@gmail.com";
+  const formEndpoint = `https://formsubmit.co/${hospitalEmail}`;
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Your appointment request has been received.");
-    setFormData({ name: "", age: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("age", formData.age);
+      data.append("phone", formData.phone);
+      data.append("message", formData.message);
+      data.append("_subject", "New Appointment Request from Life Care Website");
+      data.append("_captcha", "false");
+      data.append("_template", "table");
+
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        body: data,
+      });
+
+      if (response.ok || response.type === "opaque") {
+        toast.success("Appointment details sent to the hospital email.");
+        setFormData({ name: "", age: "", phone: "", message: "" });
+      } else {
+        toast.error("Unable to send appointment details. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Unable to send appointment details. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -135,8 +164,12 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <Button type="submit" className="mt-6 w-full rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-sm transition hover:bg-secondary/90">
-              Submit Request
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-6 w-full rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-sm transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSubmitting ? "Sending..." : "Submit Request"}
             </Button>
 
             <p className="mt-4 text-xs text-slate-500">

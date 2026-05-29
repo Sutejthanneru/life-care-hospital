@@ -27,10 +27,6 @@ const faqs = [
     a: "Our core specialists include intensive care, gynecology, surgery, anesthesiology, and reproductive medicine. Visiting consultants support orthopedics, ENT, cardiology, neurology, dermatology, and more.",
   },
   {
-    q: "Do you accept health insurance?",
-    a: "We accept many government and private insurance plans. For coverage details and cashless service inquiries, please contact our billing department before admission.",
-  },
-  {
     q: "Is the hospital equipped for surgeries?",
     a: "Yes. We have modern operating theatres, laparoscopic equipment, anesthesiology support, and post-operative recovery care for a wide range of procedures.",
   },
