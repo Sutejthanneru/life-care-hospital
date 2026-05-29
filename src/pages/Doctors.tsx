@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EmergencyStrip from "@/components/EmergencyStrip";
@@ -47,7 +46,6 @@ const doctors = [
 
 const Doctors = () => (
   <div className="min-h-screen bg-slate-50 text-slate-900">
-    <TopBar />
     <Navbar />
 
     <section className="bg-slate-950 text-slate-50">

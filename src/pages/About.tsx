@@ -1,4 +1,3 @@
-import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EmergencyStrip from "@/components/EmergencyStrip";
@@ -9,7 +8,6 @@ import ConsultationBanner from "@/components/sections/ConsultationBanner";
 
 const About = () => (
   <div className="min-h-screen bg-slate-50 text-slate-900">
-    <TopBar />
     <Navbar />
 
     <section className="bg-slate-950 text-slate-50 py-16">

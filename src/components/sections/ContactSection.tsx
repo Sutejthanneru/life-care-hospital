@@ -44,12 +44,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-slate-50">
+    <section id="contact" className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl text-center mx-auto mb-10">
-          <p className="text-sm uppercase tracking-[0.28em] text-secondary">Contact & Appointment</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-primary">Contact & Appointment</p>
           <h2 className="mt-3 section-heading">Speak with our care team today.</h2>
-          <p className="mt-4 text-sm text-slate-600">
+          <p className="mt-4 text-sm text-muted-foreground">
             Request a callback, get directions, or connect directly with our specialists for appointments and urgent support.
           </p>
         </div>
@@ -93,31 +93,43 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.0!2d79.99!3d14.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDU1JzEyLjAiTiA3OcKwNTknMjQuMCJF!5e0!3m2!1sen!2sin!4v1"
-                className="h-64 w-full"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Life Care Hospital Location"
-              />
+            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-border bg-card">
+              <div className="relative h-64 w-full">
+                <iframe
+                  src="https://www.google.com/maps?q=14.911443966630662,79.99050835402967&z=16&output=embed"
+                  className="h-full w-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Life Care Hospital Location"
+                />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=14.911443966630662,79.99050835402967"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="absolute inset-0"
+                  aria-label="Open hospital location in Google Maps"
+                />
+                <div className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-slate-900/85 px-4 py-2 text-xs font-semibold text-white shadow-lg">
+                  Open in Google Maps
+                </div>
+              </div>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="content-surface p-6">
             <div className="mb-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-secondary">Appointment Request</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-950">Book a consultation with our care team.</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="text-sm uppercase tracking-[0.24em] text-primary">Appointment Request</p>
+              <h3 className="mt-3 text-2xl font-semibold text-foreground">Book a consultation with our care team.</h3>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 Provide your details and we will contact you to confirm availability and next steps.
               </p>
             </div>
 
             <div className="space-y-4">
               <div>
-                <label htmlFor="patient-name" className="mb-2 block text-sm font-semibold text-slate-950">Patient Name *</label>
+                <label htmlFor="patient-name" className="mb-2 block text-sm font-semibold text-foreground">Patient Name *</label>
                 <Input
                   id="patient-name"
                   placeholder="Enter patient name"
@@ -129,7 +141,7 @@ const ContactSection = () => {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="patient-age" className="mb-2 block text-sm font-semibold text-slate-950">Age</label>
+                  <label htmlFor="patient-age" className="mb-2 block text-sm font-semibold text-foreground">Age</label>
                   <Input
                     id="patient-age"
                     placeholder="Age"
@@ -140,7 +152,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="patient-phone" className="mb-2 block text-sm font-semibold text-slate-950">Phone Number *</label>
+                  <label htmlFor="patient-phone" className="mb-2 block text-sm font-semibold text-foreground">Phone Number *</label>
                   <Input
                     id="patient-phone"
                     placeholder="Phone number"
@@ -153,7 +165,7 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="visit-reason" className="mb-2 block text-sm font-semibold text-slate-950">Reason for Visit</label>
+                <label htmlFor="visit-reason" className="mb-2 block text-sm font-semibold text-foreground">Reason for Visit</label>
                 <Textarea
                   id="visit-reason"
                   placeholder="e.g. follow-up consultation, new appointment, urgent concern"
@@ -167,7 +179,7 @@ const ContactSection = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="mt-6 w-full rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-sm transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-6 w-full rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? "Sending..." : "Submit Request"}
             </Button>

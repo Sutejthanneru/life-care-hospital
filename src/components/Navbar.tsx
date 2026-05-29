@@ -41,27 +41,29 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full border-b bg-white backdrop-blur-xl transition-all duration-300",
-        scrolled ? "shadow-sm border-slate-200/80" : "border-transparent shadow-none"
+        "sticky top-0 left-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-white/85 backdrop-blur-xl shadow-xl border-b border-slate-200/60"
+          : "bg-transparent",
       )}
     >
-      <nav className="container mx-auto flex items-center justify-between gap-4 px-5 py-3 md:py-3 md:px-6">
+      <nav className="container mx-auto flex items-center justify-between gap-4 px-4 py-4 md:px-6 md:py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-0 shrink-0 flex-1 md:flex-none">
-          <img src={logo} alt="Life Care Hospital logo" className="h-20 md:h-20 w-30 object-contain" />
+          <img src={logo} alt="Life Care Hospital logo" className="h-12 md:h-16 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden items-center gap-1 lg:flex ml-auto">
+        <ul className="hidden items-center gap-4 lg:flex ml-auto">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 to={link.href}
                 className={cn(
-                  "rounded-full px-4 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] transition duration-200",
+                  "rounded-full px-4 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] transition duration-200",
                   location.pathname === link.href
-                    ? "border border-secondary bg-secondary/10 text-secondary"
-                    : "text-slate-700 hover:text-secondary"
+                    ? "border border-primary bg-primary/10 text-primary"
+                    : "text-slate-700 hover:text-primary/90"
                 )}
               >
                 {link.label}
@@ -74,12 +76,13 @@ const Navbar = () => {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:7287049516"
-            className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-secondary/40 hover:text-secondary active:bg-slate-100"
+            className="inline-flex items-center rounded-full border border-transparent bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition shadow-sm hover:shadow-md"
           >
-            <Phone className="mr-2 h-4 w-4" /> 72870 49516
+            <Phone className="mr-2 h-4 w-4 text-primary" />
+            <span className="text-sm">72870 49516</span>
           </a>
           <Link to="/contact">
-            <Button size="sm" className="rounded-full bg-secondary px-6 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition hover:bg-secondary/90 active:scale-95 h-auto">
+            <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 active:scale-95 h-auto">
               Book Appointment
             </Button>
           </Link>

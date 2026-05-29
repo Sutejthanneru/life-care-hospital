@@ -6,44 +6,48 @@
 
 @layer base {
   :root {
-    --background: 213 36% 96%;
-    --foreground: 215 18% 14%;
+    /* Brand palette (Life Care Hospital) */
+    --medical-green: 154 63% 33%; /* approx. #1F8A5B */
+    --medical-blue: 223 63% 33%; /* approx. #1F3C88 */
 
-    --card: 214 28% 100%;
-    --card-foreground: 215 18% 14%;
+    --background: 150 70% 98%; /* soft mint/white */
+    --foreground: 217 14% 16%;
 
-    --popover: 214 28% 100%;
-    --popover-foreground: 215 18% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 217 14% 16%;
 
-    --primary: 214 46% 28%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 14% 16%;
+
+    --primary: var(--medical-green);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 147 50% 32%;
+    --secondary: var(--medical-blue);
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 212 18% 93%;
-    --muted-foreground: 214 16% 42%;
+    --muted: 210 18% 94%;
+    --muted-foreground: 216 14% 40%;
 
-    --accent: 190 56% 70%;
-    --accent-foreground: 214 18% 14%;
+    --accent: 150 60% 85%;
+    --accent-foreground: 217 14% 16%;
 
-    --destructive: 147 50% 32%;
+    --destructive: 358 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 18% 84%;
-    --input: 214 18% 98%;
-    --ring: 214 46% 30%;
+    --border: 212 18% 90%;
+    --input: 210 18% 98%;
+    --ring: var(--medical-green);
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
 
-    --sidebar-background: 213 36% 96%;
-    --sidebar-foreground: 215 18% 14%;
-    --sidebar-primary: 214 46% 28%;
+    --sidebar-background: 150 70% 98%;
+    --sidebar-foreground: 217 14% 16%;
+    --sidebar-primary: var(--medical-green);
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 147 50% 32%;
+    --sidebar-accent: var(--medical-blue);
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 18% 84%;
-    --sidebar-ring: 214 46% 30%;
+    --sidebar-border: 210 18% 92%;
+    --sidebar-ring: var(--medical-green);
   }
 }
 
@@ -111,7 +115,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid hsl(var(--secondary));
+    outline: 2px solid hsl(var(--primary));
     outline-offset: 3px;
   }
 }
@@ -126,7 +130,14 @@
   }
 
   .content-surface {
-    @apply rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-[0_18px_50px_-30px_rgba(20,24,47,0.15)];
+    @apply rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-[0_12px_40px_-20px_rgba(31,56,88,0.08)];
+  }
+
+  .glass-navbar {
+    background: rgba(255,255,255,0.72);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 24px rgba(31,56,88,0.06);
   }
 
   .section-heading {
